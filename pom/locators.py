@@ -7,6 +7,6 @@ next_button = "xpath://div[contains(text(),'Next')]"
 share_button = "xpath://div[contains(text(),'Share')]"
 notification = "xpath://button[contains(text(),'Not Now')]"
 
+fil = "xpath:/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/button[1]"
 
-
-fil = "xpath://input[@id='file-upload']"
+write = "xpath://div[@aria-label='Write a caption...']"

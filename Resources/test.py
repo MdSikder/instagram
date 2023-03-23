@@ -1,20 +1,17 @@
-from instabot import Bot
+import time
 
-bot = Bot()
-bot.login(username="usemany5@gmail.com", password="Qwer1234!!@@")
+from selenium import webdriver
+from selenium.webdriver.common.by import By
 
-######  upload a picture #######
-bot.upload_photo("yoda.jpg", caption="biscuit eating baby")
+driver = webdriver.Chrome()
+time.sleep(30)
+# driver.implicitly_wait(0.5)
+driver.maximize_window()
 
-######  follow someone #######
-bot.follow("elonrmuskk")
+driver.get("https://www.tutorialspoint.com/selenium/selenium_automation_practice.htm")
+# to identify element
 
-######  send a message #######
-bot.send_message("Hello from Dhaval", ['user1', 'user2'])
-
-######  get follower info #######
-my_followers = bot.get_user_followers("dhavalsays")
-for follower in my_followers:
-    print(follower)
-
-bot.unfollow_everyone()
+s = driver.find_element(By.XPATH, "//input[@type='file']")
+# s = driver.find_element_by_xpath("//input[@type='file']")
+# file path specified with send_keys
+s.send_keys("C:\1.png")

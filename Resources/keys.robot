@@ -1,15 +1,12 @@
 *** Settings ***
 Library     SeleniumLibrary
 Variables   ../POM/locators.py
-Resource    ../Resources/keys.robot
-Library           BuiltIn
-Library           ImageHorizonLibrary
-
-
 
 *** Variables ***
-${UploadFiletest}           ${upload_button}
-${AddFile}          C:\Users\KloverCloud\PycharmProjects\project\WebBots\instagram\upload\filpng.png
+${UploadFiletest}        xpath=/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/button[1]
+${AddFile}          C:\\Users\\KloverCloud\\Desktop\\file\\fil.png
+
+#${AddFile}          upload//filpng.png
 
 
 *** Test Cases ***
@@ -23,34 +20,88 @@ LogIn
     input text    ${password}   Qwer1234!!@@
     sleep    1
     click button    ${submit}
-    sleep    5
+    sleep    10
+
+    press keys      NONE    TAB
+    sleep    1
 
     press keys      NONE    ENTER
-    sleep    2
+    sleep    1
 
-#    click button     ${notification}}
-#    sleep    2
+#    handle alert
+
+
+
+
+#    RELOAD PAGE
+#
+#    press keys      NONE    ENTER
+#    sleep    3
 
     wait until element is visible    ${Create_button}   120
-
 
     click element    ${Create_button}
     sleep    4
 
-    Upload file
+    press keys      NONE    TAB
+    sleep    1
 
-    click element    ${next_button}
-    sleep    2
+    press keys      NONE    ENTER
+    sleep    4
 
-    click element     ${next_button}
-    sleep    2
-
-    click element    ${next_button}
+    press keys      NONE    TAB
+    sleep    1
+    press keys      NONE    TAB
+    sleep    1
+    press keys      NONE    TAB
+    sleep    1
+    press keys      NONE    TAB
+    sleep    1
+    press keys      NONE    TAB
+    sleep    1
+    press keys      NONE    TAB
+    sleep    1
+    press keys      NONE    TAB
+    sleep    1
+    press keys      NONE    TAB
+    sleep    1
+    press keys      NONE    TAB
     sleep    5
+
+
+
+#    Drag And Drop      file:${CURDIR}${/}${FILENAME}       id:demo-upload
+
+
+#    Wait Until Page Contains Element   ${UploadFiletest}   60
+#    sleep    2
+
+#    Choose File     ${UploadFiletest}     ${AddFile}
+#    sleep    10
+#
+#    press keys      NONE    TAB
+#    sleep    2
+#
+#    press keys      NONE    TAB
+#    sleep    2
+#
+#    press keys      NONE    ENTER
+#    sleep    3
+
+#    click element    ${next_button}
+#    sleep    2
+#
+#    click element     ${next_button}
+#    sleep    2
+#
+#    click element    ${next_button}
+#    sleep    5
 
 *** Keywords ***
 Upload file
     Wait Until Page Contains Element   ${UploadFiletest}   60s
-    click element   ${UploadFiletest}
-    Choose File     UploadFiletest     AddFile
-    sleep    10
+    scroll element into view    ${UploadFiletest}
+    sleep    3
+    Scroll Element Into View     ${UploadFiletest}
+    Choose File     ${UploadFiletest}     ${AddFile}
+    sleep    3
