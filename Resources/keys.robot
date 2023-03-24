@@ -1,6 +1,7 @@
 *** Settings ***
 Library     SeleniumLibrary
 Variables   ../POM/locators.py
+Library  PyWindowsGuiLibrary
 
 *** Variables ***
 ${UploadFiletest}        xpath=/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/button[1]
@@ -28,74 +29,35 @@ LogIn
     press keys      NONE    ENTER
     sleep    1
 
-#    handle alert
-
-
-
-
-#    RELOAD PAGE
-#
-#    press keys      NONE    ENTER
-#    sleep    3
 
     wait until element is visible    ${Create_button}   120
 
     click element    ${Create_button}
     sleep    4
 
-    press keys      NONE    TAB
-    sleep    1
+    click element    xpath=//button[text()='Select from computer']"
+    sleep    3
 
-    press keys      NONE    ENTER
+    PyWindowsGuiLibrary.input text    C:\\Users\\KloverCloud\\PycharmProjects\\project\\WebBots\\instagram\\upload\\filpng.png
+    sleep    2
+
+#    pyautogui.typewrite("C:\\Users\\KloverCloud\\PycharmProjects\\project\\WebBots\\instagram\\upload\\filpng.png")
+
+    press keys    ENTER
+
+    sleep    3
+
+    click element    ${next_button}
+    sleep    2
+
+    click element     ${next_button}
+    sleep    2
+
+    input text    ${write}
     sleep    4
 
-    press keys      NONE    TAB
-    sleep    1
-    press keys      NONE    TAB
-    sleep    1
-    press keys      NONE    TAB
-    sleep    1
-    press keys      NONE    TAB
-    sleep    1
-    press keys      NONE    TAB
-    sleep    1
-    press keys      NONE    TAB
-    sleep    1
-    press keys      NONE    TAB
-    sleep    1
-    press keys      NONE    TAB
-    sleep    1
-    press keys      NONE    TAB
+    click element    ${share_button}}
     sleep    5
-
-
-
-#    Drag And Drop      file:${CURDIR}${/}${FILENAME}       id:demo-upload
-
-
-#    Wait Until Page Contains Element   ${UploadFiletest}   60
-#    sleep    2
-
-#    Choose File     ${UploadFiletest}     ${AddFile}
-#    sleep    10
-#
-#    press keys      NONE    TAB
-#    sleep    2
-#
-#    press keys      NONE    TAB
-#    sleep    2
-#
-#    press keys      NONE    ENTER
-#    sleep    3
-
-#    click element    ${next_button}
-#    sleep    2
-#
-#    click element     ${next_button}
-#    sleep    2
-#
-#    click element    ${next_button}
-#    sleep    5
 
 *** Keywords ***
 Upload file
