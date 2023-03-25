@@ -163,4 +163,159 @@ data = {
         ('GlAccountId', SqlType.int()),
     ],
 
+    'chart_of_accounts': [
+        ('GlAccountNumber', SqlType.text()),
+        ('GlAccountName', SqlType.text()),
+        ('GlAccountType', SqlType.text()),  # confusion
+        ('SubAccountof', SqlType.text()),
+        ('OffsetAccount', SqlType.text()),
+        ('Options', SqlType.text()),  # confusion
+        ('Hidden', SqlType.text()),
+        ('SubjectToTaxAuthority', SqlType.text()),  # confusion
+        ('FundAccount', SqlType.text()),
+        ('GlAccountId', SqlType.int()),
+        ('SubAccountOfId', SqlType.int()),
+        ('OffsetAccountId', SqlType.int()),
+
+    ],
+
+    'check_register_detail': [
+
+        ('BankAccount', SqlType.text()),
+        ('PayeeName', SqlType.text()),
+        ('CheckNumber', SqlType.text()),
+        ('Cleared', SqlType.text()),  # confusion
+        ('CheckMemo', SqlType.text()),
+        ('OccurredDate', SqlType.date()),
+        ('PaymentAmount', SqlType.double()),
+        ('PropertyName', SqlType.text()),
+        ('GLAccountNumber', SqlType.text()),
+        ('GlAccountName', SqlType.text()),
+        ('InvoiceAmount', SqlType.double()),
+        ('Remarks', SqlType.text()),
+        ('Reference', SqlType.text()),
+        ('ACHBatchGenDate', SqlType.date()),
+        ('PropertyAddress', SqlType.text()),
+        ('GLAccountId', SqlType.int()),
+        ('PropertyId', SqlType.int()),
+
+    ],
+
+    'completed_processes': [
+        ('AttachableFor', SqlType.text()),
+        ('Property', SqlType.text()),
+        ('WorkflowName', SqlType.text()),
+        ('CompletedDate', SqlType.text()),
+
+    ],
+
+    'delinquency': [
+
+        ('Unit', SqlType.text()),
+        ('Name', SqlType.text()),
+        ('TenantStatus', SqlType.text()),
+        ('Tags', SqlType.text()),
+        ('PhoneNumbers', SqlType.text()),
+        ('MoveIn', SqlType.date()),
+        ('MoveOut', SqlType.date()),
+        ('Deposit', SqlType.double()),
+        ('AmountReceivable', SqlType.double()),
+        ('DelinquentSubsidyAmount', SqlType.double()),
+        ('0To30', SqlType.double()),
+        ('30Plus', SqlType.double()),
+        ('LastPayment', SqlType.date()),
+        ('PaymentAmount', SqlType.double()),
+        ('LateCount', SqlType.int()),
+        ('PrimaryTenantEmail', SqlType.text()),
+        ('UnitType', SqlType.text()),
+        ('Property', SqlType.text()),
+        ('PropertyName', SqlType.text()),
+        ('PropertyId', SqlType.int()),
+        ('PropertyAddress', SqlType.text()),
+        ('PropertyStreet1', SqlType.text()),
+        ('PropertyStreet2', SqlType.text()),
+        ('PropertyCity', SqlType.text()),
+        ('PropertyState', SqlType.text()),
+        ('PropertyZip', SqlType.text()),
+        ('NotYetDue', SqlType.double()),
+        ('30To60', SqlType.double()),
+        ('60Plus', SqlType.double()),
+        ('60To90', SqlType.double()),
+        ('90Plus', SqlType.double()),
+        ('PrepaymentAmount', SqlType.double()),
+        ('NSF', SqlType.int()),
+        ('CertifiedFundsOnly', SqlType.text()),  # confusion
+        ('Rent', SqlType.double()),
+        ('DelinquentRent', SqlType.double()),
+        ('DelinquencyNotes', SqlType.text()),
+        ('MonthlyCharges', SqlType.text()),
+        ('RentDueDay', SqlType.int()),
+        ('InCollections', SqlType.text()),
+        ('CollectionsAgency', SqlType.text()),
+        ('UnitId', SqlType.int()),
+        ('OccupancyId', SqlType.int()),
+        ('PaymentPlan', SqlType.double()),
+
+    ],
+
+    'deposit_register': [
+
+        ('DepositNumber', SqlType.text()),
+        ('ReceiptDate', SqlType.date()),
+        ('Payer', SqlType.text()),
+        ('PropertyName', SqlType.text()),
+        ('Type', SqlType.text()),
+        ('Reference', SqlType.text()),
+        ('Description', SqlType.text()),
+        ('DepositAmount', SqlType.double()),
+        ('ReceiptAmount', SqlType.double()),
+        ('Cleared', SqlType.text()),  # confusion
+        ('ReceiptDescription', SqlType.text()),
+        ('UnitName', SqlType.text()),
+        ('PropertyId', SqlType.int()),
+        ('UnitId', SqlType.int()),
+
+    ],
+
+    'general_ledger': [
+
+        ('Property', SqlType.text()),
+        ('PostDate', SqlType.date()),
+        ('PartyName', SqlType.text()),
+        ('Type', SqlType.text()),
+        ('Reference', SqlType.text()),
+        ('Debit', SqlType.double()),
+        ('Credit', SqlType.double()),
+        ('Balance', SqlType.double()),
+        ('Description', SqlType.text()),
+        ('GlAccountName', SqlType.text()),
+        ('PropertyName', SqlType.text()),
+        ('PropertyId', SqlType.int()),
+        ('PropertyAddress', SqlType.text()),
+        ('PropertyStreet1', SqlType.text()),
+        ('PropertyStreet2', SqlType.text()),
+        ('PropertyCity', SqlType.text()),
+        ('PropertyState', SqlType.text()),
+        ('PropertyZip', SqlType.text()),
+        ('Unit', SqlType.text()),
+        ('Month', SqlType.text()),
+        ('Quarter', SqlType.text()),
+        ('Year', SqlType.text()),
+        ('BankAccount', SqlType.text()),
+        ('TxnCreatedAt', SqlType.date()),
+        ('TxnUpdatedAt', SqlType.date()),
+        ('CreatedBy', SqlType.text()),
+        ('Remarks', SqlType.text()),
+        ('DepositDate', SqlType.date()),
+        ('DepositNumber', SqlType.text()),
+        ('CashAccount', SqlType.text()),
+        ('PartyId', SqlType.int()),
+        ('TxnId', SqlType.int()),
+        ('TxnDetailId', SqlType.int()),
+        ('UnitId', SqlType.int()),
+        ('GlAccountId', SqlType.int()),
+
+    ],
+
+
 }
