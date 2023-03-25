@@ -1,7 +1,5 @@
 from pom.locators2 import Locator
 import time
-import os
-from telnetlib import EC
 
 from selenium import webdriver
 from selenium.common import NoSuchElementException, TimeoutException, InvalidSessionIdException
@@ -9,7 +7,9 @@ from selenium.webdriver.common.by import By
 import pyautogui
 
 
-def test_SB_default_01():
+def instagram():
+
+    # input your file/image into upload folder, then copy and paste path here
     UploadFilePath = "C:\\Users\\KloverCloud\\PycharmProjects\\project\\WebBots\\instagram\\upload\\filpng.png"
     text = "hello dear window"
 
@@ -20,10 +20,12 @@ def test_SB_default_01():
     driver.get("https://www.instagram.com/")
     time.sleep(5)
 
-    driver.find_element(By.XPATH, "//input[@name='username']").send_keys("usemany5@gmail.com")
+    # input user username
+    driver.find_element(By.XPATH, "//input[@name='username']").send_keys("paste username")
     time.sleep(2)
 
-    driver.find_element(By.XPATH, "//input[@name='password']").send_keys("Qwer1234!!@@")
+    # input password
+    driver.find_element(By.XPATH, "//input[@name='password']").send_keys("paste password")
     time.sleep(2)
 
     driver.find_element(By.XPATH, Locator.submit).click()
@@ -67,4 +69,3 @@ def test_SB_default_01():
 
     driver.find_element(By.XPATH, Locator.share_button).click()
     time.sleep(30)
-#
